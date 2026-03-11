@@ -1,17 +1,14 @@
 import express from "express";
+import { home, login, about, contact } from "../controllers/userController.js";
 
 const userRouter = express.Router();
 
-userRouter.get("/", (req, res) => {
-  res.send("Página de inicio");
-});
+userRouter.get("/", home);
 
-userRouter.get("/contact", (req, res) => {
-  res.send("Página de contacto");
-});
+userRouter.get("/login", login);
 
-userRouter.get("/about", (req, res) => {
-  res.send("Página de Acerca de");
-});
+userRouter.get("/about", about);
+
+userRouter.get("/contact", contact);
 
 export default userRouter;
