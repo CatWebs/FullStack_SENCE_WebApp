@@ -7,5 +7,5 @@ const PORT = process.env.PORT || 3000;
 app.use("/", router);
 
 app.listen(PORT, () => {
-  console.log(`Servidor levantado en el puerto ${PORT}`);
+  console.log(`Servidor levantado en el puerto http://localhost:${PORT}`);
 });
