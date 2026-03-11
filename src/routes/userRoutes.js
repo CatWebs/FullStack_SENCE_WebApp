@@ -1,5 +1,11 @@
 import express from "express";
-import { home, login, about, contact } from "../controllers/userController.js";
+import {
+  home,
+  login,
+  about,
+  contact,
+  getUsers,
+} from "../controllers/userController.js";
 
 const userRouter = express.Router();
 
@@ -10,5 +16,7 @@ userRouter.get("/login", login);
 userRouter.get("/about", about);
 
 userRouter.get("/contact", contact);
+
+userRouter.get("/users", getUsers);
 
 export default userRouter;
