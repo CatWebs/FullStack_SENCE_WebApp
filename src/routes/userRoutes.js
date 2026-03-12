@@ -6,6 +6,7 @@ import {
   contact,
   getUsers,
   getProducts,
+  addUser,
 } from "../controllers/userController.js";
 
 const userRouter = express.Router();
@@ -21,5 +22,7 @@ userRouter.get("/contact", contact);
 userRouter.get("/users", getUsers);
 
 userRouter.get("/products", getProducts);
+
+userRouter.post("/user", addUser);
 
 export default userRouter;
