@@ -5,6 +5,7 @@ import {
   about,
   contact,
   getUsers,
+  getProducts,
 } from "../controllers/userController.js";
 
 const userRouter = express.Router();
@@ -18,5 +19,7 @@ userRouter.get("/about", about);
 userRouter.get("/contact", contact);
 
 userRouter.get("/users", getUsers);
+
+userRouter.get("/products", getProducts);
 
 export default userRouter;

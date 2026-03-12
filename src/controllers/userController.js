@@ -20,3 +20,10 @@ export const getUsers = (req, res) => {
   const users = JSON.parse(fs.readFileSync("src/data/users.json", "utf-8"));
   res.json(users);
 };
+
+export const getProducts = (req, res) => {
+  const products = JSON.parse(
+    fs.readFileSync("src/data/products.json", "utf-8"),
+  );
+  res.json(products);
+};
