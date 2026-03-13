@@ -42,16 +42,16 @@ Esta es una API básica para practicar desarrollo backend. Incluye servidor Expr
 Puedes probar agregando un producto o un usuario. El siguiente ejemplo muestra como agregar un producto.
 
 1. Conociendo el archivo .json
-   ![](./private-img/products-json.png)
+   ![](./private-img/products-antes.png)
 
 2. Comprobando ruta /products
-   ![](./private-img/products-antes.png)
+   ![](./private-img/products.png)
 
 3. Mediante Postman hago la solicitud POST y recibo una respuesta "Producto agregado"
    ![](./private-img/postman-post.png)
 
 4. Compruebo el archivo .json y veo un nuevo producto
-   ![](./private-img/products.png)
+   ![](./private-img/products-json.png)
 
 **Prueba con Postman o Thunder Client en VS Code.**
 
