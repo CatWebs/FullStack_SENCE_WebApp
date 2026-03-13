@@ -35,3 +35,13 @@ export const addUser = (req, res) => {
   fs.writeFileSync("src/data/users.json", JSON.stringify(users));
   res.send("Archivo creado");
 };
+
+export const addProduct = (req, res) => {
+  const product = req.body;
+  const products = JSON.parse(
+    fs.readFileSync("src/data/products.json", "utf-8"),
+  );
+  products.push(product);
+  fs.writeFileSync("src/data/products.json", JSON.stringify(products));
+  res.send("Producto agregado");
+};

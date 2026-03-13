@@ -208,5 +208,15 @@
     "categoria": "acrilico",
     "color": "uva",
     "stock": 10
+  },
+  {
+    "id": 22,
+    "nombre": "Lana Arena",
+    "precio": 2990,
+    "descripcion": "Composición de 100% lana, el ovillo Funcional garantiza calidez y suavidad en cada puntada. Con un grosor medio y 2 hebras, este ovillo te brinda aproximadamente 228 metros de hilo para tus proyectos. Se recomienda utilizar palillos de tamaño N° 3-4 para obtener los mejores resultados.",
+    "imagen": "public/img/lana/lana-arena.jpg",
+    "categoria": "lana",
+    "color": "arena",
+    "stock": 1
   }
 ]
