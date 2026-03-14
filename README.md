@@ -19,7 +19,11 @@ Desarrollado por [Catwebs](https://github.com/CatWebs) en 2026.
 
 ## Descripción
 
-Esta es una API básica para practicar desarrollo backend. Incluye servidor Express con rutas GET y POST para manejar datos (ej. usuarios o productos). Conecta a base de datos (por definir). Este proyecto forma parte del bootcamp "Fullstack Javascript Trainee" impartido por Sence y [Talento Digital para Chile](https://talentodigitalparachile.cl/)
+Esta es una API básica para practicar desarrollo backend. Incluye servidor Express con rutas GET y POST para manejar datos (ej. usuarios o productos). Conecta a base de datos (por definir). Este proyecto forma parte del bootcamp "Fullstack Javascript Trainee" impartido por Sence y [Talento Digital para Chile](https://talentodigitalparachile.cl/).
+
+Este proyecto está inspirado en mi primer desarrollo con React, el cual consiste en una tienda de venta de ovillos para tejer, y lleva por nombre [Arañitas tejedoras](https://react-js-final-catalina-cisternas.vercel.app/).
+
+En esta ocasión, el desarrollo realizado en este proyecto contempla la orquestación de la infraestructura de backend para dicha tienda, el cual en un futuro será enlazado con el desarrollo Frontend previamente realizado para generar un proyecto fullstack funcional.
 
 ## Instalación
 
