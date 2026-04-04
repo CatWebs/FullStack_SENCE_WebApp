@@ -4,16 +4,21 @@ export const home = (req, res) => {
   });
 };
 
-export const about = (req, res) => {
-  res.render("about", {
-    title: "Pagina de Nosotros",
+export const catalogo = (req, res) => {
+  res.render("catalogo", {
+    title: "Catálogo",
   });
 };
 
-export const contact = (req, res) => {
-  res.render("contact", {
-    title: "Página de Contacto",
-  });
+export const crear = async (req, res) => {
+  try {
+    res.render("insertData", {
+      title: "Página de creación de contenido",
+    });
+  } catch (error) {
+    console.error("Error al cargar la página: ", error);
+    res.status(500).send("Error interno");
+  }
 };
 
 export const login = (req, res) => {
