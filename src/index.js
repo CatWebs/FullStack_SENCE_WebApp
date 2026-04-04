@@ -5,6 +5,7 @@ import productRouter from "./routes/productRoutes.js";
 import "dotenv/config";
 import exphbs from "express-handlebars";
 import path from "path";
+import sequelize from "./config/db.js";
 
 const __dirname = path.resolve();
 
@@ -19,6 +20,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "src/public")));
 
 //Sincronizar base de datos
+const connectDB = async () => {
+  try {
+    await sequelize.sync();
+    console.log("Conexión exitosa a base de datos");
+  } catch (error) {
+    console.error("Error para acceder a la base de datos: ", error);
+  }
+};
+connectDB();
 
 //Configuracion de Handlebars
 app.set("view engine", "hbs");
