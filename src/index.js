@@ -13,6 +13,12 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//Static public
+app.use(express.static(path.join(__dirname, "src/public")));
+
+//Sincronizar base de datos
 
 //Configuracion de Handlebars
 app.set("view engine", "hbs");
