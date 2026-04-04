@@ -31,7 +31,7 @@ export const login = (req, res) => {
 export const crearCategoria = async (req, res) => {
   try {
     const { nombre } = req.body;
-    await Categoria.create(nombre);
+    await Categoria.create({ nombre });
     res.redirect("/");
   } catch (error) {
     console.error("Error al crear la categoría: ", error);
