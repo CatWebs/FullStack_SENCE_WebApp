@@ -8,3 +8,5 @@ productRouter.get("/products", getProducts);
 productRouter.post("/product", addProduct);
 
 export default productRouter;
+
+/* CON POSTMAN */

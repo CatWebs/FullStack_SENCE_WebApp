@@ -1,3 +1,5 @@
+import { Categoria, Producto } from "../models/index.js";
+
 export const home = (req, res) => {
   res.render("home", {
     title: "Pagina Principal",
@@ -23,4 +25,16 @@ export const crear = async (req, res) => {
 
 export const login = (req, res) => {
   res.send("Página de Login");
+};
+
+//Guardar categoría desde formulario
+export const crearCategoria = async (req, res) => {
+  try {
+    const { nombre } = req.body;
+    await Categoria.create(nombre);
+    res.redirect("/");
+  } catch (error) {
+    console.error("Error al crear la categoría: ", error);
+    res.status(500).send("Error interno");
+  }
 };

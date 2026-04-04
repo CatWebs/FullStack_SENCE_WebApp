@@ -8,3 +8,5 @@ userRouter.get("/users", getUsers);
 userRouter.post("/user", addUser);
 
 export default userRouter;
+
+/* CON POSTMAN */

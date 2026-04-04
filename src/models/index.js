@@ -1,5 +1,5 @@
-import Categoria from "./Categoria";
-import Producto from "./Productos";
+import Categoria from "./Categoria.js";
+import Producto from "./Productos.js";
 
 //Relación uno a muchos
 Categoria.hasMany(Producto, { foreignKey: "categoriaId" });
