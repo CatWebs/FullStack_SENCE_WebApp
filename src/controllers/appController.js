@@ -1,17 +1,20 @@
 import { Categoria, Producto } from "../models/index.js";
 
+//Mostrar página de inicio
 export const home = (req, res) => {
   res.render("home", {
     title: "Pagina Principal",
   });
 };
 
+//Mostrar productos
 export const catalogo = (req, res) => {
   res.render("catalogo", {
     title: "Catálogo",
   });
 };
 
+//Mostrar formularios (todos)
 export const crear = async (req, res) => {
   try {
     res.render("insertData", {
@@ -23,6 +26,8 @@ export const crear = async (req, res) => {
   }
 };
 
+//Mostrar página de Login
+//Todavía sin funcionalidad.
 export const login = (req, res) => {
   res.send("Página de Login");
 };
