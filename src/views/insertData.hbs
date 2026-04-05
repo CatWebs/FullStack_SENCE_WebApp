@@ -80,6 +80,8 @@
 
         </div>
       </div> }}
+
+      <!-- ── CREATE CATEGORY ── -->
       <div class="col-12 col-lg-5">
         <form class="form-card" action="/crear-categoria" method="POST">
 
@@ -107,7 +109,7 @@
 
       <!-- ── ADD PRODUCTS ── -->
       <div class="col-12 col-lg-7">
-        <div class="form-card">
+        <form class="form-card" action="/crear-producto" method="POST">
 
           <div class="card-heading">
             <span class="card-icon icon-product">🗂️</span>
@@ -115,63 +117,82 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Nombre</label>
+            <label for="nombre" class="form-label">Nombre</label>
             <input
+              name="nombre"
+              id="nombre"
               type="text"
               class="form-control"
-              placeholder="Hand-dyed Merino Wool"
+              placeholder="Algodón Color Calipso"
             />
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Descripción</label>
+            <label for="descripcion" class="form-label">Descripción</label>
             <textarea
+              id="descripcion"
+              name="descripcion"
               class="form-control"
               rows="3"
-              placeholder="Soft, sustainable, and vibrant..."
+              placeholder="Este ovillo te brinda una composición 100% algodón..."
             ></textarea>
           </div>
 
           <div class="row g-3 mb-3">
             <div class="col-6">
-              <label class="form-label">Stock</label>
-              <input type="number" class="form-control" placeholder="45" />
+              <label for="stock" class="form-label">Stock</label>
+              <input
+                id="stock"
+                name="stock"
+                type="number"
+                class="form-control"
+                placeholder="45"
+              />
             </div>
             <div class="col-6">
-              <label class="form-label">Precio ($)</label>
-              <input type="number" class="form-control" placeholder="24.99" />
+              <label for="precio" class="form-label">Precio ($)</label>
+              <input
+                type="number"
+                id="precio"
+                name="precio"
+                class="form-control"
+                placeholder="2000"
+              />
             </div>
           </div>
 
-          {{! <div class="mb-3">
+          <div class="mb-3">
             <label class="form-label">Categoría</label>
-            <select class="form-control">
+            <select class="form-control" name="categoriaId">
               <option value="" disabled selected>Selecciona una categoría</option>
-              <option value="acrilico">Acrílico</option>
-              <option value="algodon">Algodón</option>
-              <option value="lana">Lana</option>
-              <option value="poliester">Poliéster</option>
-            </select>
-          </div> }}
 
-          <div class="mb-1">
+              {{#each categorias}}
+                <option value="{{this.id}}">{{this.nombre}}</option>
+              {{else}}
+                <p>No hay categorias debes crear una</p>
+              {{/each}}
+            </select>
+          </div>
+
+          {{! <div class="mb-1">
             <label class="form-label">Imagen URL</label>
             <div class="input-group input-group-img">
               <input
                 type="url"
+                name=""
                 class="form-control"
                 placeholder="https://image-placeholder.com/yarn"
               />
               <span class="input-icon">🖼</span>
             </div>
-          </div>
+          </div> }}
 
-          <button class="btn-add mt-4">
-            <span style="font-size:1.1rem;">＋</span>
+          <button type="submit" class="btn-register mt-4">
+            <span style="font-size:1.1rem;">+</span>
             Registrar producto
           </button>
 
-        </div>
+        </form>
       </div>
 
     </div>

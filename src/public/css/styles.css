@@ -475,11 +475,11 @@ textarea.form-control {
 }
 
 .btn-add {
-  background: var(--dark);
+  background: var(--text-dark);
   color: #fff;
   border: none;
   border-radius: 50px;
-  width: 100%;
+  width: fit-content;
   padding: 13px;
   font-size: 0.95rem;
   font-weight: 500;

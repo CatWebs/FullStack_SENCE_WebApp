@@ -17,8 +17,10 @@ export const catalogo = (req, res) => {
 //Mostrar formularios (todos)
 export const crear = async (req, res) => {
   try {
+    const categorias = await Categoria.findAll({ raw: true });
     res.render("insertData", {
       title: "Página de creación de contenido",
+      categorias,
     });
   } catch (error) {
     console.error("Error al cargar la página: ", error);
@@ -40,6 +42,18 @@ export const crearCategoria = async (req, res) => {
     res.redirect("/");
   } catch (error) {
     console.error("Error al crear la categoría: ", error);
+    res.status(500).send("Error interno");
+  }
+};
+
+//Guardar producto desde formulario
+export const crearProducto = async (req, res) => {
+  try {
+    const { nombre, descripcion, stock, precio, categoriaId } = req.body;
+    await Producto.create({ nombre, descripcion, stock, precio, categoriaId });
+    res.redirect("/");
+  } catch (error) {
+    console.error("Error al crear el producto: ", error);
     res.status(500).send("Error interno");
   }
 };
