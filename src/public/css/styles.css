@@ -514,3 +514,12 @@ textarea.form-control {
   color: var(--muted);
   font-size: 0.95rem;
 }
+
+.empty-state {
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px dashed var(--text-dark);
+}

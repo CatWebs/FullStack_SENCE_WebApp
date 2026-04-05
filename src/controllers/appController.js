@@ -8,10 +8,16 @@ export const home = (req, res) => {
 };
 
 //Mostrar productos
-export const catalogo = (req, res) => {
-  res.render("catalogo", {
-    title: "Catálogo",
-  });
+export const catalogo = async (req, res) => {
+  try {
+    const productos = await Producto.findAll({ raw: true });
+    res.render("catalogo", {
+      title: "Catálogo",
+      productos,
+    });
+  } catch (error) {
+    console.log("Error al renderizar productos", error);
+  }
 };
 
 //Mostrar formularios (todos)
