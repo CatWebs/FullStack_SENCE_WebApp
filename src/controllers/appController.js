@@ -81,3 +81,40 @@ export const quitarProducto = async (req, res) => {
     res.status(500).send("Error al eliminar producto");
   }
 };
+
+export const getEditProductForm = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const producto = await Producto.findByPk(id, { raw: true });
+    const categorias = await Categoria.findAll({ raw: true });
+    if (!producto)
+      return res.status(500).render("error", {
+        message: "Curso no Existe",
+      });
+
+    res.render("editForm", {
+      producto,
+      categorias,
+    });
+  } catch (error) {
+    console.error("Error al cargar la edición", error);
+    res.status(500).send("Error Interno al Cargar Formulario");
+  }
+};
+
+export const updateProducto = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { nombre, descripcion, precio, stock, categoriaId } = req.body;
+    await Producto.update(
+      { nombre, descripcion, precio, stock, categoriaId },
+      { where: { id } },
+    );
+    res.redirect("/");
+  } catch (error) {
+    console.error("error al actualizar producto", error);
+    res.status(500).render("Error", {
+      message: "Error para guardar los datos",
+    });
+  }
+};

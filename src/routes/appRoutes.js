@@ -6,6 +6,8 @@ import {
   crearCategoria,
   crearProducto,
   quitarProducto,
+  getEditProductForm,
+  updateProducto,
 } from "../controllers/appController.js";
 
 const router = express.Router();
@@ -27,5 +29,9 @@ router.post("/crear-producto", crearProducto);
 
 //Eliminar producto
 router.post("/eliminar/:id", quitarProducto);
+
+//Editar producto
+router.get("/editar-producto/:id", getEditProductForm);
+router.post("/actualizar/:id", updateProducto);
 
 export default router;
