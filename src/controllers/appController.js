@@ -56,10 +56,28 @@ export const crearCategoria = async (req, res) => {
 export const crearProducto = async (req, res) => {
   try {
     const { nombre, descripcion, stock, precio, categoriaId } = req.body;
-    await Producto.create({ nombre, descripcion, stock, precio, categoriaId });
+    const producto = await Producto.create({
+      nombre,
+      descripcion,
+      stock,
+      precio,
+      categoriaId,
+    });
     res.redirect("/");
   } catch (error) {
     console.error("Error al crear el producto: ", error);
     res.status(500).send("Error interno");
+  }
+};
+
+//Eliminar Producto
+export const quitarProducto = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Producto.destroy({ where: { id } });
+    res.redirect("/");
+  } catch (error) {
+    console.error("Error al eliminar", error);
+    res.status(500).send("Error al eliminar producto");
   }
 };
