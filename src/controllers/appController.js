@@ -75,7 +75,7 @@ export const quitarProducto = async (req, res) => {
   try {
     const { id } = req.params;
     await Producto.destroy({ where: { id } });
-    res.redirect("/");
+    res.redirect("/catalogo");
   } catch (error) {
     console.error("Error al eliminar", error);
     res.status(500).send("Error al eliminar producto");
