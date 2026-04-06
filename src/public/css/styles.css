@@ -530,3 +530,25 @@ textarea.form-control {
   border-radius: 8px;
   border: 1px dashed var(--text-dark);
 }
+
+.action-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.action-link.edit {
+  color: #ffc107;
+}
+
+.action-link.delete {
+  color: #dc3545;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
