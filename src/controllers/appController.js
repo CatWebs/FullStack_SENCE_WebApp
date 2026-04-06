@@ -90,6 +90,7 @@ export const quitarProducto = async (req, res) => {
   }
 };
 
+//Editar producto
 export const getEditProductForm = async (req, res) => {
   try {
     const { id } = req.params;
