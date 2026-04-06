@@ -10,11 +10,19 @@ export const home = (req, res) => {
 //Mostrar productos
 export const catalogo = async (req, res) => {
   try {
-    const productos = await Producto.findAll({ raw: true });
-    res.render("catalogo", {
-      title: "Catálogo",
-      productos,
+    const productosRaw = await Producto.findAll({
+      include: [
+        {
+          model: Categoria,
+          as: "categoria",
+          attributes: ["nombre"],
+        },
+      ],
     });
+
+    const productos = productosRaw.map((p) => p.get({ plain: true }));
+
+    res.render("catalogo", { title: "Catálogo", productos });
   } catch (error) {
     console.log("Error al renderizar productos", error);
   }

@@ -30,6 +30,14 @@ const connectDB = async () => {
 };
 connectDB();
 
+//Normalizar ruta de imágenes
+const normalizar = (str) =>
+  str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
 //Configuracion de Handlebars
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "/src/views"));
@@ -40,6 +48,21 @@ app.engine(
     defaultLayout: "main",
     layoutsDir: path.join(__dirname, "/src/views/layout"),
     extname: ".hbs",
+    helpers: {
+      imgPath: (nombre, categoria) => {
+        const normalize = (str) =>
+          (str || "") // 👈 evita undefined/null
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/\s+/g, "-");
+
+        const nombreFormateado = normalize(nombre);
+        const categoriaFormateada = normalize(categoria);
+
+        return `/img/${categoriaFormateada}/${nombreFormateado}.jpg`;
+      },
+    },
   }),
 );
 
